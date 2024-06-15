@@ -2,12 +2,15 @@ import React from 'react'
 
 type Props = {}
 
-const Previous
- = (props: Props) => {
+const Previous = (props: Props) => {
   return (
-    <div>Previous
+    <section className='flex size-full flex-col gap-10 text-white'>
+      <h1 className='text-3xl font-bold'>
+        Previous
+      </h1>
+
       
-    </div>
+    </section>
   )
 }
 
