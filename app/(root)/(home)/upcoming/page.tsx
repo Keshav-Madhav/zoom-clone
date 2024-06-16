@@ -1,3 +1,4 @@
+import CallList from '@/components/CallList'
 import React from 'react'
 
 type Props = {}
@@ -9,7 +10,7 @@ const Upcoming = (props: Props) => {
         Upcoming
       </h1>
 
-      
+      <CallList type='upcoming' />
     </section>
   )
 }
