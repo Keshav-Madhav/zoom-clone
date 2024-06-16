@@ -83,7 +83,7 @@ const CallList = ({type}: Props) => {
               '/icons/upcoming.svg' :
               '/icons/recordings.svg'
             }
-            title={meeting.state?.custom.description.substring(0, 23) + (meeting.state?.custom.description.length > 23 ? '...' : '') || meeting.filename.substring(0,20) + (meeing.filename.length > 20 ? '...' : '') || 'Untitled Meeting'}
+            title={meeting.state?.custom?.description?.substring(0, 23) + (meeting.state?.custom?.description?.length > 23 ? '...' : '') || meeting?.filename?.substring(0,20) + (meeing?.filename?.length > 20 ? '...' : '') || 'Personal Meeting'}
             date={meeting.state?.startsAt.toLocaleString() || meeting.start_time.toLocaleString()}
             isPreviousMeeting={
               type === 'ended'

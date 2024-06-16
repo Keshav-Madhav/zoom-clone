@@ -9,7 +9,7 @@ import {
 import { cn } from '@/lib/utils'
 import { CallControls, CallParticipantsList, CallStatsButton, CallingState, PaginatedGridLayout, SpeakerLayout, useCallStateHooks } from '@stream-io/video-react-sdk'
 import { LayoutList, Users } from "lucide-react"
-import { useSearchParams } from "next/navigation"
+import { useRouter, useSearchParams } from "next/navigation"
 import {useState} from 'react'
 import EndCallButton from "./EndCallButton"
 import Loader from "./Loader"
@@ -19,6 +19,7 @@ type callLayoutType = 'speaker-left' | 'speaker-right' | 'grid'
 type Props = {}
 
 const MeetingRoom = (props: Props) => {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const isPersonalRoom = !!searchParams.get('personal');
   const [layout, setLayout] = useState<callLayoutType>('speaker-left')
@@ -54,7 +55,9 @@ const MeetingRoom = (props: Props) => {
       </div>
 
       <div className='fixed bottom-0 flex w-full items-center justify-center gap-5 flex-wrap'>
-        <CallControls />
+        <CallControls onLeave={()=>{
+          router.push('/')
+        }}/>
 
         <DropdownMenu>
           <div className="flex items-center">
